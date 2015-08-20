@@ -3,6 +3,11 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'api/testing/exercise/test/version'
 
+require 'rubygems'
+require 'bundler'
+Bundler.setup(:default, :ci)
+require 'nokogiri'
+
 Gem::Specification.new do |spec|
   spec.name          = "api-testing-exercise-test"
   spec.version       = Api::Testing::Exercise::Test::VERSION
@@ -21,3 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
 end
+
+gem.add_development_dependency 'rspec'
+gem.add_development_dependency 'rake'
+
