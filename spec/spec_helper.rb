@@ -4,7 +4,11 @@
 # loaded once.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-Bundler.setup
+# Took the information from http://bundler.io/bundler_setup.html
+require 'rubygems'
+require 'bundler'
+Bundler.setup(:default, :ci)
+require 'nokogiri'
 require 'my_lib'
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
