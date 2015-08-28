@@ -24,4 +24,3 @@ end
 
 gem.add_development_dependency 'rspec'
 gem.add_development_dependency 'rake'
-
