@@ -2,7 +2,7 @@ require 'airborne'
 
 describe 'basic user activity' do
 
-	context 'there is no user in the database' do
+	context 'when there is no user in the database' do
 	
 		it 'should create a new user' do
 		  	post "http://localhost:3000/api/flights",
@@ -25,7 +25,7 @@ describe 'basic user activity' do
 
 	end
 
-	context 'there is already a group of users in the database' do
+	context 'when there is already a group of users in the database' do
 		# this one will create 3 users before and delete after
 		# also has to provide the access tokens for each of the users
 		# it will test that a user can be edited, deleted...
