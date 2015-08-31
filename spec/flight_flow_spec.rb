@@ -3,12 +3,7 @@ require 'airborne'
 describe 'flights' do
 	context 'when no flights exist in the database' do
 
-		before :all do
-			puts "roda uma vez, antes de todos os testes"
-		end
-
 		after :each do
-			puts "roda uma vez, depois de todos os testes"
 			delete "http://localhost:3000/api/flights/2"
 		end
 
@@ -32,7 +27,6 @@ describe 'flights' do
 
 	context 'when there are flights in the database' do
 		before :each do
-			puts "roda antes de cada um dos testes"	
 			post "http://localhost:3000/api/flights",
 				{
 				data_partida: "2015-10-10",
@@ -48,13 +42,11 @@ describe 'flights' do
 		end
 
 		after :each do
-			puts "roda depois de cada um dos testes"	
 			delete "http://localhost:3000/api/flights/1"
 		end
 
 		it 'should validate that get method returns flights' do
 		    get 'http://localhost:3000/api/flights'
-		    puts "roda teste 1"
 		    expect(json_body[0][:data_partida]).to eq("2015-10-10T00:00:00.000Z")
 		end
 
